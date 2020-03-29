@@ -1,0 +1,5 @@
+First Issue:
+    when the password is encrypted into database, how to auth when user login?
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+            auth.userDetailsService(dbUserDetailsService).passwordEncoder(bCryptPasswordEncoder);
+        }

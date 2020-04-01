@@ -1,5 +1,11 @@
 server:
-  port: 80
+  port: 443
+  ssl:
+    key-store: classpath:server.jks
+    key-alias: tomcat
+    key-store-type: JKS
+    key-store-password: tomcat
+    enabled: true
 
 spring:
   thymeleaf:
@@ -8,7 +14,7 @@ spring:
     url: jdbc:mysql://localhost:3306/myfirstec2?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8&useSSL=false
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
-    password: firstEC2
+    password: root
   jpa:
     hibernate:
       ddl-auto: update

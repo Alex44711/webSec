@@ -2,7 +2,6 @@ package com.learn.web02.controller;
 
 import com.learn.web02.entity.UserDO;
 import com.learn.web02.service.UserService;
-import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;

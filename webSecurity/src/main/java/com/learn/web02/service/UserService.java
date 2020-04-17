@@ -9,7 +9,7 @@ public interface UserService {
      *
      * username only, default USER root
      */
-    void insert(UserDO userDO);
+    boolean insert(UserDO userDO);
 
     /**
      * check user info

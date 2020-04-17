@@ -23,15 +23,16 @@ public class BaseUserService implements UserService {
     }
 
     @Override
-    public void insert(UserDO userDO) {
+    public boolean insert(UserDO userDO) {
         String username = userDO.getUsername();
         if (exist(username)){
-            throw new RuntimeException("User exists!");
+            return false;
         }
         PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         userDO.setPassword(passwordEncoder.encode(userDO.getPassword()));
         userDO.setRole("USER");
         userRepository.save(userDO);
+        return true;
     }
 
     @Override

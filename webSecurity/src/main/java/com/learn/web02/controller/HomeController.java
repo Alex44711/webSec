@@ -3,10 +3,13 @@ package com.learn.web02.controller;
 import com.learn.web02.entity.UserDO;
 import com.learn.web02.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 @Controller
 public class HomeController {
@@ -37,10 +40,10 @@ public class HomeController {
     }
 
     @PostMapping("/register")
-    public String doRegister(UserDO userDO){
-//        TODO checking logic
-        userService.insert(userDO);
-        return "redirect:register?success";
+    public ResponseEntity<String> doRegister(@RequestBody UserDO userDO){
+        if(userService.insert(userDO)){
+            return new ResponseEntity<>(HttpStatus.OK);
+        }
+        return new ResponseEntity<>( "User already exists!", HttpStatus.CONFLICT);
     }
-
 }

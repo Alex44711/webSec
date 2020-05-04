@@ -44,8 +44,7 @@ function Register() {
             nickname.value="";
         }
     };
-    // xmlhttp.open("POST","/register",true);
-    xmlhttp.open("GET","http://yanshenghong.com/api/myWeb/getBlogsBasic",true);
+    xmlhttp.open("POST","/register",true);
     xmlhttp.setRequestHeader("Content-Type", "application/json");
     xmlhttp.send(data);
 }

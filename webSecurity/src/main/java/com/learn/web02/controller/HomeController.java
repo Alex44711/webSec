@@ -39,7 +39,7 @@ public class HomeController {
         return "register";
     }
 
-    @PostMapping("/register")
+    @PostMapping(value = "/register", consumes = "application/json")
     public ResponseEntity<String> doRegister(@RequestBody UserDO userDO){
         if(userService.insert(userDO)){
             return new ResponseEntity<>(HttpStatus.OK);

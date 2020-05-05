@@ -7,6 +7,13 @@ function Register() {
     var passwordTip = document.getElementById("passwordValidate");
     var nicknameTip = document.getElementById("nicknameValidate");
     var reg = /^[A-Za-z0-9]{6,16}$/.test(password.value);
+
+    //Get csrf token
+    var csrfToken = $("meta[name='_csrf']").attr("content");
+    var csrfHeader = $("meta[name='_csrf_header']").attr("content");
+    console.log(csrfToken);
+    console.log(csrfHeader);
+
     if(userId.value===""){
         validateElement(userTip, " Enter username", "text-danger", "glyphicon glyphicon-info-sign");
     }else{
@@ -46,6 +53,7 @@ function Register() {
     };
     xmlhttp.open("POST","/register",true);
     xmlhttp.setRequestHeader("Content-Type", "application/json");
+    xmlhttp.setRequestHeader(csrfHeader,csrfToken);
     xmlhttp.send(data);
 }
 

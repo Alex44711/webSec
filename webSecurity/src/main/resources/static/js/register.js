@@ -15,20 +15,20 @@ function Register() {
     console.log(csrfHeader);
 
     if(userId.value===""){
-        validateElement(userTip, " Enter username", "text-danger", "glyphicon glyphicon-info-sign");
+        validateElement(userTip, " Enter username", "text-danger");
     }else{
         cleanValidate(userTip);
     }
     if(password.value===""){
-        validateElement(passwordTip, " Enter password", "text-danger", "glyphicon glyphicon-info-sign");
+        validateElement(passwordTip, " Enter password", "text-danger");
     }else{
         cleanValidate(passwordTip);
     }
     if(!reg){
-        validateElement(passwordTip, " numbers with letters [6,12]", "text-danger", "glyphicon glyphicon-info-sign");
+        validateElement(passwordTip, " numbers with letters [6,12]", "text-danger");
     }
     if(nickname.value===""){
-        validateElement(nicknameTip, " Enter nickname", "text-danger", "glyphicon glyphicon-info-sign");
+        validateElement(nicknameTip, " Enter nickname", "text-danger");
     }else{
         cleanValidate(nicknameTip);
     }
@@ -39,13 +39,13 @@ function Register() {
         if(xmlhttp.readyState===4 && xmlhttp.status===409){
             cleanValidate(passwordTip);
             cleanValidate(nicknameTip);
-            validateElement(userTip, " User Exists", "text-success", "glyphicon glyphicon-remove-sign");
+            validateElement(userTip, " User Exists", "text-success");
         }
         if(xmlhttp.readyState===4 && xmlhttp.status===200)
         {
             cleanValidate(userTip);
             cleanValidate(passwordTip);
-            validateElement(nicknameTip, " Success registered", "text-success","glyphicon glyphicon-ok");
+            validateElement(nicknameTip, " Success registered", "text-success");
             userId.value="";
             password.value="";
             nickname.value="";
@@ -57,9 +57,9 @@ function Register() {
     xmlhttp.send(data);
 }
 
-function validateElement(tip, text, textColor, sign){
+function validateElement(tip, text, textColor){
     tip.innerHTML=text;
-    tip.className=textColor+" col-md-6 col-md-offset-3 "+sign;
+    tip.className=textColor+" col-md-8 offset-md-2 ";
     tip.style.cssText="margin-top:-7px; margin-bottom:10px; font-size: 12px;";
 }
 

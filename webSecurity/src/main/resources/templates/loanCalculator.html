@@ -8,55 +8,59 @@
         #graph {border: solid black 1px;}
         th, td {vertical-align: top;}
     </style>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-<table>
-    <tr>
-        <th>Enter loan Data:</th>
-        <td></td>
-        <th>Loan Balance, Cumulative Equity, and Interest Payment</th>
-    </tr>
-    <tr>
-        <td>Amount of the loan ($):</td>
-        <td><input id="amount" onchange="calculate();"></td>
-        <td rowspan="8"><canvas id="graph" width="400" height="250"></canvas></td>
-    </tr>
-    <tr>
-        <td>Annual interest (%):</td>
-        <td><input id="apr" onchange="calculate();"></td>
-    </tr>
-    <tr>
-        <td>RePayment period (years):</td>
-        <td><input id="years" onchange="calculate();"></td>
-    </tr>
-    <tr>
-        <td>Zipcode (to find lenders):</td>
-        <td><input id="zipcode" onchange="calculate();"></td>
-    </tr>
-    <tr>
-        <th>Approximate Payments:</th>
-        <td><button onclick="calculate();">Calculate</button></td>
-    </tr>
-    <tr>
-        <td>Monthly payment:</td>
-        <td>$<span class="output" id="payment"></span></td>
-    </tr>
-    <tr>
-        <td>Total payments:</td>
-        <td>$<span class="output" id="total"></span></td>
-    </tr>
-    <tr>
-        <td>Total interest:</td>
-        <td>$<span class="output" id="totalinterest"></span></td>
-    </tr>
-    <tr>
-        <th>Sponsors:</th>
-        <td colspan="2">
-            Apply for your loan with one of the these fine lenders:
-            <div id="lenders"></div>
-        </td>
-    </tr>
-</table>
+<div class="container" style="margin-top: 50px">
+    <table>
+        <tr>
+            <th>Enter loan Data:</th>
+            <td></td>
+            <th>Loan Balance, Cumulative Equity, and Interest Payment</th>
+        </tr>
+        <tr>
+            <td>Amount of the loan ($):</td>
+            <td><input id="amount" onchange="calculate();"></td>
+            <td rowspan="8"><canvas id="graph" width="400" height="250"></canvas></td>
+        </tr>
+        <tr>
+            <td>Annual interest (%):</td>
+            <td><input id="apr" onchange="calculate();"></td>
+        </tr>
+        <tr>
+            <td>RePayment period (years):</td>
+            <td><input id="years" onchange="calculate();"></td>
+        </tr>
+        <tr>
+            <td>Zipcode (to find lenders):</td>
+            <td><input id="zipcode" onchange="calculate();"></td>
+        </tr>
+        <tr>
+            <th>Approximate Payments:</th>
+            <td><button onclick="calculate();">Calculate</button></td>
+        </tr>
+        <tr>
+            <td>Monthly payment:</td>
+            <td>$<span class="output" id="payment"></span></td>
+        </tr>
+        <tr>
+            <td>Total payments:</td>
+            <td>$<span class="output" id="total"></span></td>
+        </tr>
+        <tr>
+            <td>Total interest:</td>
+            <td>$<span class="output" id="totalinterest"></span></td>
+        </tr>
+        <tr>
+            <th>Sponsors:</th>
+            <td colspan="2">
+                Apply for your loan with one of the these fine lenders:
+                <div id="lenders"></div>
+            </td>
+        </tr>
+    </table>
+    <a class="btn btn-primary" href="/" role="button" style="margin-top: 20px">Previous</a>
+</div>
 <script>
     "use strict";
     function calculate(){

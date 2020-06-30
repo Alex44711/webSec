@@ -39,6 +39,11 @@ public class HomeController {
         return "register";
     }
 
+    @GetMapping("/loanCalculator")
+    public String loanCalculator(){
+        return "loanCalculator";
+    }
+
     @PostMapping(value = "/register", consumes = "application/json")
     public ResponseEntity<String> doRegister(@RequestBody UserDO userDO){
         if(userService.insert(userDO)){

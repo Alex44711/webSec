@@ -1,5 +1,14 @@
-First Issue:
+1:
     when the password is encrypted into database, how to auth when user login?
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
             auth.userDetailsService(dbUserDetailsService).passwordEncoder(bCryptPasswordEncoder);
         }
+2:
+	How to access post with postman (csrf token)
+		Use get to set the csrf token in postman environment,
+		add X-CSRF-TOKEN (get from the get request) in post request header,
+		protocol should be same in get request and post request.
+3: 
+	If xml2json cannot resolve reponseHTML: caused by label was not closed like <input> it shoule be <input/>
+4:
+	If config with https, should test https protocol locally

@@ -1,6 +1,6 @@
-cd /var/lib/jenkins/workspace/webSec
+cd /var/lib/jenkins/workspace/webSecBlog
 mvn package
-mv /var/lib/jenkins/workspace/webSec/webSecurity/target/webSecurity01-1.0.jar /home/ec2-user/webSecurity01-1.0.jar
+mv /var/lib/jenkins/workspace/webSecBlog/webSecurity/target/webSecurity01-1.0.jar /home/ec2-user/webSecurity01-1.0.jar
 rm -rf *
 cd /home/ec2-user
 cp /dev/null temp.txt

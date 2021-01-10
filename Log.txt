@@ -12,3 +12,7 @@
 	If xml2json cannot resolve reponseHTML: caused by label was not closed like <input> it shoule be <input/>
 4:
 	If config with https, should test https protocol locally
+5:
+	jenkins https config, renew the jks file in /usr/lib/jenkins restart the jenkins service
+
+	**webhook delievery 500 error** --> disable SSL verify
